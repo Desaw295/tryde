@@ -16,7 +16,7 @@ import youtube_dl
 import os
 import requests
 
-TOKEN = "NTcxMzM5NzE2MjQzNDg4Nzg4.XMQseg.xrGhICMum_jQRj_QERDD7bWLEaQ"
+TOKEN = "Bot Token"
 
 bot = commands.Bot(command_prefix='+')
 bot.remove_command('help')

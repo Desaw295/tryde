@@ -1,9 +1,9 @@
 # Imports&Run
 
 import discord
+
 discord.__version__
 from discord.ext import commands
-from discord.ext.commands import bot
 import asyncio
 import random
 import time
@@ -13,10 +13,8 @@ from discord import Member
 from discord.ext.commands import has_permissions
 from discord.utils import get
 import youtube_dl
-import os
-import requests
 
-TOKEN = "Bot Token"
+TOKEN = "NTcxMzM5NzE2MjQzNDg4Nzg4.XMQseg.xrGhICMum_jQRj_QERDD7bWLEaQ"
 
 bot = commands.Bot(command_prefix='+')
 bot.remove_command('help')
@@ -38,7 +36,7 @@ async def on_ready():
 #   await bot.change_presence(game=discord.Game(name='/help | /invite'))
 
 # Background Task
-status = ["+help | +invite", "mit Desaw.Lennard", "auf Discord"]
+status = ["+help | +invite", "Testing", "auf Discord"]
 
 
 async def change_status():
@@ -224,7 +222,7 @@ async def help(ctx, arg1=None):
             if arg1 == '5':
                 embed = discord.Embed(color=random_color)
                 embed.add_field(name="Server Command",
-                                value="`+idee [Command Idee][Beschreibung]` - Hast du eine neue Idee für den Bot. Schlage Sie vor",
+                                value="`+idee [Command Idee] [Beschreibung]` - Hast du eine neue Idee für den Bot. Schlage Sie vor",
                                 inline=True)
                 await bot.say(embed=embed)
     else:
@@ -250,7 +248,7 @@ async def help(ctx, arg1=None):
             if arg1 == '3':
                 embed = discord.Embed(color=random_color)
                 embed.add_field(name="Fun Commands",
-                                value="`+emolets` - Screibe einen Text in Emojies\n:warning: Achtung : Beta Command :warning:\nAlles kein Schreiben und nur ein Wort\n`+münze` - Wirft eine Münze \n`+love [@User] [@User]` - Rechnet zwischen 2 Usern die Liebe aus. \n`+ssp` - Spiele Schere, Stein, Papier gegen den Bot \n`+embed [text]` - Sendet deine Nachricht als Embed\n`+8ball` - Frage den Bot eine Frage",
+                                value="`+emolets` - Screibe einen Text in Emojies\n:warning: Achtung : Beta Command :warning:\nAlles klein Schreiben und nur ein Wort\n`+münze` - Wirft eine Münze \n`+love [@User] [@User]` - Rechnet zwischen 2 Usern die Liebe aus. \n`+ssp` - Spiele Schere, Stein, Papier gegen den Bot \n`+embed [text]` - Sendet deine Nachricht als Embed\n`+8ball` - Frage den Bot eine Frage",
                                 inline=True)
                 await bot.say(embed=embed)
             if arg1 == '4':
@@ -579,7 +577,7 @@ async def gchat(ctx, *args):
         embed = discord.Embed(
             colour = discord.Colour.red()
         )
-        embed.add_field(name=':x: **Fehler**! :', value="Du musst eine Nachricht schreiben\n[z.B.: `/gchat Hi`]", inline=True )
+        embed.add_field(name=':x: **Fehler**! :', value="Du musst eine Nachricht schreiben\n[z.B.: `+gchat Hi`]", inline=True )
         embed.set_footer(text='Bitte versuche es erneut.')
         await bot.say(embed=embed)
 
@@ -639,7 +637,7 @@ async def version(ctx):
 @bot.command(pass_context=True)
 async def botinfo(ctx):
     ping = random.randint(1, 100)
-    servercounter = "undefined"
+    servercounter = len(bot.servers)
     blue = discord.Color.blue()
     dark_blue = discord.Color.dark_blue()
     purple = discord.Color.purple()
@@ -714,7 +712,7 @@ async def guilds(ctx):
     random_color = random.choice(color_list)
     server = ""
     for s in bot.servers:
-        server += "- %s\n" % (s.name)
+        server += "- %s (%s)\n" % (s.name, s.id)
 
     embed = discord.Embed(color=random_color, description=server)
     await bot.say(embed=embed)
@@ -806,4 +804,4 @@ async def volume(ctx, sound_volume=None):
 
 
 
-bot.run(str(os.environ.get('BOT_TOKEN')))
+bot.run(TOKEN)

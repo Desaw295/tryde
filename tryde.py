@@ -38,7 +38,7 @@ async def on_ready():
 #   await bot.change_presence(game=discord.Game(name='/help | /invite'))
 
 # Background Task
-status = ["+help | +invite", "Testing", "auf Discord"]
+status = ["+help | +invite", "mit Desaw.Lennard", "auf Discord"]
 
 
 async def change_status():
@@ -714,7 +714,7 @@ async def guilds(ctx):
     random_color = random.choice(color_list)
     server = ""
     for s in bot.servers:
-        server += "- %s (%s)\n" % (s.name, s.id)
+        server += "- %s\n" % (s.name)
 
     embed = discord.Embed(color=random_color, description=server)
     await bot.say(embed=embed)

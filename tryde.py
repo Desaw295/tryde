@@ -627,7 +627,7 @@ async def CU(ctx):
 async def version(ctx):
     if ctx.message.author.id == "393423879126646785":
         await bot.delete_message(ctx.message)
-        msg = await bot.say("Bot version : `1.3.9`")
+        msg = await bot.say("Bot version : `2.6.6`")
         await asyncio.sleep(5)
         await bot.delete_message(msg)
     else:

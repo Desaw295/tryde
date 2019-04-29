@@ -806,4 +806,4 @@ async def volume(ctx, sound_volume=None):
 
 
 
-bot.run(str(os.environ.get(TOKEN)))
+bot.run(str(os.environ.get('BOT_TOKEN')))

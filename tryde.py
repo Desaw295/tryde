@@ -14,7 +14,7 @@ from discord.ext.commands import has_permissions
 from discord.utils import get
 import youtube_dl
 
-TOKEN = "NTcxMzM5NzE2MjQzNDg4Nzg4.XMQseg.xrGhICMum_jQRj_QERDD7bWLEaQ"
+TOKEN = "YOUR TOKEN"
 
 bot = commands.Bot(command_prefix='+')
 bot.remove_command('help')
@@ -29,7 +29,7 @@ async def on_ready():
     print('Eingeloggt als:')
     print(bot.user.name)
     print(bot.user.id)
-    print('Programmiert von @Desaw.Lennard#1883')
+    print('Programmiert von @Desaw#1883')
     print('-----------------')
 
 
